@@ -12,19 +12,19 @@ public class Encryption {
         int len = letters.length;
         int column = (int) Math.ceil(Math.sqrt(len));
 
-        String line = firstStringFormatter(letters, len, column);
+        String line = divideLineByColumnLength(letters, len, column);
 
         String[] words = line.split(" ");
         int row = words.length;
 
-        line = finalStringFormatter(column, words, row);
+        line = switchRowsToColumns(column, words, row);
         System.out.println(line);
 
         sc.close();
 
     }
 
-    private static String firstStringFormatter(String[] letters, int len, int column) {
+    private static String divideLineByColumnLength(String[] letters, int len, int column) {
         String line = "";
         for(int i = 0; i < len; i++) {
             if(i % column == column - 1) {
@@ -37,7 +37,7 @@ public class Encryption {
         return line;
     }
 
-    private static String finalStringFormatter(int column, String[] words, int row) {
+    private static String switchRowsToColumns(int column, String[] words, int row) {
         String line = "";
         for(int i = 0; i < column; i++) {
             for(int j = 0; j < row; j++) {
