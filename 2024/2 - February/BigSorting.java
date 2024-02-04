@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class BigSorting {
 
@@ -41,7 +41,7 @@ public class BigSorting {
     }
 
     private static Map<Integer, ArrayList<String>> numberLength(List<String> unsorted) {
-        Map<Integer, ArrayList<String>> map = new HashMap<>();
+        Map<Integer, ArrayList<String>> map = new TreeMap<>();
         for(String value: unsorted) {
             int len = value.length();
             if(map.get(len) == null) {
